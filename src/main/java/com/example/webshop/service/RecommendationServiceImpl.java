@@ -34,4 +34,5 @@ public class RecommendationServiceImpl implements RecommendationService{
     public void delete(Recommendation recommendation) {
         repository.delete(recommendation);
     }
+
 }

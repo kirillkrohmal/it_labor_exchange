@@ -1,0 +1,32 @@
+.logo {
+    color: white;
+
+}
+
+
+nav {
+    margin-right: 1rem;
+}
+
+header {
+    display:flex;
+    justify-content: space-between;
+    background-color: black;
+} 
+
+
+li 
+{
+    display: inline-block;
+    color: green;
+    margin-left: 1rem;
+
+}
+
+li a {
+    color: white;
+}
+
+li a:visited {
+    color: silver;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create users</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{'/css/main.css'}"/>
+    <link layout:fragment="pageStyleLink"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <style layout:fragment="pageStyle"></style>
+
+</head>
+<body>
+<div class="container">
+    <a href="https://hh.ru/applicant/resumes">К списку резюме</a>
+
+    <h2>Крохмаль Кирилл</h2> 
+    
+    <text>Мужчина, 35 лет, родился 23 ноября 1987</text>
+    <a href="@{/new}">Редактировать</a>
+
+    <text>+7 (929) 664-16-89
+        krohmal_kirill@mail.ru — предпочитаемый способ связи</text>
+    <text>Москва, не готов к переезду, не готов к командировкам</text>
+
+
+    <h2>Java-разработчик</h2> 
+        
+
+        <text>  Специализации:
+                Программист, разработчик
+                Занятость: полная занятость
+
+                График работы: удаленная работа
+        </text>
+
+        <a type="button" th:href="@{/new}" class="btn btn-secondary bg-secondary text-white">Создать резюме</a>
+</div>

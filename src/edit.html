@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Ваше резюме</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="@{'/css/main.css'}"/>
+    <link layout:fragment="pageStyleLink"/>
+    <style layout:fragment="pageStyle"></style>
+</head>
+
+<body>
+    <div align="center">
+        <h2>Ваше резюме</h2>
+
+        <form method="POST" action="@{/recommendation}" object="${recommendation}">
+            <div class="form-row" >
+                <div class="col-md-6 mb-3">
+                    <div class="col-md-6 mb-3">
+                        <label for="name">Имя
+                            <input field="*{name}" type="text" id="name"/>
+                        </label>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastname">Фамилия
+                            <input field="*{lastname}" type="text" id="lastname"/>
+                        </label>
+                    </div>                    
+                    
+                    <div class="col-md-6 mb-3">
+                        <label for="city">Город проживания
+                            <input field="*{city}" type="text" id="city"/>
+                        </label>
+                    </div>
+
+                    <h2>Основная информация</h2>
+                    <div class="col-md-6 mb-3">
+                        <label for="name">Дата рождения
+                            <input field="*{date}" type="text" id="date"/>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label th:for="sex">Пол
+                            <input type="radio" id="contactChoice1"
+                            name="contact" value="sexman">
+                            <label for="contactChoice1">Мужской</label>
+                        
+                            <input type="radio" id="contactChoice2"
+                            name="contact" value="sexwoman">
+                            <label for="contactChoice2">Женский</label>
+                        </label>
+                    </div>           
+                    <div class="col-md-6 mb-3">
+                        <label for="citizenship">Гражданство
+                            <input field="*{citizenship}" type="text" id="citizenship"/>
+                        </label>
+                    </div>
+                    <div>
+                        <label th:for="experience">Опыт работы
+                            <input type="radio" id="experience1"
+                            name="experience" value="experience1">
+                            <label for="experienceChoice1">Есть опыт работы</label>
+                        
+                            <input type="radio" id="experience2"
+                            name="experience" value="experience2">
+                            <label for="experienceChoice2">Нет опыта работы</label>
+
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+ 
+
+
+            <a type="button" class="btn btn-secondary bg-secondary text-white">Сохранить</a>
+            <a type="button" class="btn btn-secondary bg-secondary text-white">Отмена</a>
+
+        </div>
+    </div>
+</body>

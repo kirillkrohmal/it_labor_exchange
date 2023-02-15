@@ -22,10 +22,10 @@ public class RecommendationController {
     }
 
     @GetMapping("/new")
-    public String addNewRecommendations(@ModelAttribute("recommendation") Recommendation recommendation, BindingResult bindingResult, Model model) {
+    public String addNewRecommendations(Model model, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-            model.addAttribute("recommendation", recommendation);
+            model.addAttribute("recommendation", new Recommendation());
         }
 
         return "create-new";
@@ -38,15 +38,15 @@ public class RecommendationController {
         return "redirect:/recommendations/";
     }
 
-    @GetMapping(value = "/edit")
-    public String edit(@ModelAttribute("recommendation")Recommendation recommendation, Model model) {
-        model.addAttribute("recommendation", recommendation);
+    @GetMapping(value = "/CreateResume")
+    public String edit(Model model) {
+        model.addAttribute("recommendation", new Recommendation());
 
         return "/edit";
     }
 
     @PutMapping
-    public String update(@ModelAttribute("recommendation")Recommendation recommendation) throws IOException {
+    public String update(@ModelAttribute("recommendation") Recommendation recommendation) throws IOException {
         recommendationService.updateRecommendation(recommendation);
 
         return "redirect:/api/recommendations";
@@ -54,7 +54,7 @@ public class RecommendationController {
 
 
     @DeleteMapping
-    public String delete(@ModelAttribute("recommendation") Recommendation recommendation) {
+    public String delete(@PathVariable("recommendation") Recommendation recommendation) {
         recommendationService.delete(recommendation);
 
         return "redirect:/api/recommendations";

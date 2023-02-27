@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit users</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{'/css/main.css'}"/>
+    <link layout:fragment="pageStyleLink"/>
+    <style layout:fragment="pageStyle"></style>
+</head>
+
+<body>
+    <div align="center">
+        <h2>Персональная информация</h2>
+        <a href="https://hh.ru/applicant/resumes/view?resume=1aeef532ff0103873f0039ed1f784646733453">Вернуться к резюме без сохранения</a>
+
+        <form method="POST" action="@{/recommendation}" object="${recommendation}">
+            <div class="form-row" >
+                <div class="col-md-6 mb-3">
+                    <div class="col-md-6 mb-3">
+                        <label for="name">Имя
+                            <input field="*{name}" type="text" id="name"/>
+                        </label>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="surname">Отчество
+                            <input field="*{surname}" type="text" id="surname"/>
+                        </label>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastname">Фамилия
+                            <input field="*{lastname}" type="text" id="lastname"/>
+                        </label>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="name">Дата рождения
+                            <input field="*{date}" type="text" id="date"/>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="sex">Пол
+                            <input type="radio" id="contactChoice1"
+                            name="contact" value="sexman">
+                            <label for="contactChoice1">Мужской</label>
+                        
+                            <input type="radio" id="contactChoice2"
+                            name="contact" value="sexwoman">
+                            <label for="contactChoice2">	Женский</label>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-3">
+                <label for="metro">Станция метро
+                    <input field="*{metro}" type="text" id="metro"/>
+                </label>
+            </div>
+            <div>
+                <label th:for="sex">Переезд
+                    <input type="radio" id="moving1"
+                    name="moving" value="moving1">
+                    <label for="movingChoice1">Невозможен</label>
+                
+                    <input type="radio" id="moving2"
+                    name="moving" value="moving2">
+                    <label for="movingChoice2">Возможен</label>
+
+                    <input type="radio" id="moving3"
+                    name="moving" value="moving3">
+                    <label for="movingChoice3">Желателен</label>
+                </label>
+            </div>
+
+            <div>
+                <label for="travel">Переезд
+                    <input type="radio" id="travel1"
+                    name="travel" value="travel1">
+                    <label for="travelChoice1">Никогда</label>
+                
+                    <input type="radio" id="travel2"
+                    name="travel" value="travel2">
+                    <label for="travelChoice2">Готов</label>
+
+                    <input type="radio" id="travel3"
+                    name="travel" value="travel3">
+                    <label for="travelChoice3">Иногда</label>
+                </label>
+            </div>
+            <a type="button" class="btn btn-secondary bg-secondary text-white">Сохранить</a>
+            <a type="button" class="btn btn-secondary bg-secondary text-white">Отмена</a>
+
+        </div>
+    </div>
+</body>

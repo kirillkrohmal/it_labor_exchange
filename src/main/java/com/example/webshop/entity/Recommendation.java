@@ -2,21 +2,22 @@ package com.example.webshop.entity;
 
 import jakarta.persistence.*;
 
-@Table(name="recommendations")
+@Table(name="recomendations")
 @Entity
 public class Recommendation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
 
-    @Column(nullable = false)
+    @Column(name = "title")
     private String title;
 
-    @Column(nullable = false)
+    @Column(name = "salary")
     private Integer salary;
 
-    @Column(nullable = false)
+    @Column(name = "description")
     private String description;
 
     public Recommendation() {
@@ -59,5 +60,15 @@ public class Recommendation {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Recommendation{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", salary=" + salary +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

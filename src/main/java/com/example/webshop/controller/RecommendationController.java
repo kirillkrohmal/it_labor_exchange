@@ -16,6 +16,15 @@ public class RecommendationController {
     @Autowired
     private RecommendationService recommendationService;
 
+    @PostMapping("/api/recommendations" )
+    public String addRecommendation(@RequestBody Recommendation recommendation) {
+        if(recommendation.getSalary() < 1 || recommendation.getTitle().isEmpty() || recommendation.getDescription().isEmpty()) throw new IllegalArgumentException("все поля должны быть заполнены");
+        recommendationService.save(recommendation);
+
+        return "success-added";
+    }
+
+
     @GetMapping("/api/recommendations")
     public List<Recommendation> getRecommendations() {
         return recommendationService.getRecommendations();
@@ -31,7 +40,7 @@ public class RecommendationController {
         return "create-new";
     }
 
-    @PostMapping("new")
+    @PostMapping
     public String save(@ModelAttribute("recommendation") Recommendation recommendation) {
         recommendationService.save(recommendation);
 

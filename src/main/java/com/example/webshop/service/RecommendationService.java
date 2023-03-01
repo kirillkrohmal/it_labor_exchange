@@ -16,4 +16,6 @@ public interface RecommendationService {
     void save(Recommendation recommendation);
 
     void delete(Recommendation recommendation);
+
+    Recommendation findById(int id);
 }

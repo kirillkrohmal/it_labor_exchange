@@ -6,7 +6,7 @@ export default function Home (props) {
     
     return (
         <header>
-            <span class="logo">hh.ru</span>
+            <span className="logo">hh.ru</span>
             <nav>
                 <ul>
                     <li>

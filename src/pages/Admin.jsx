@@ -1,3 +1,5 @@
+import Recomendations from "../components/Recomendations";
+
 export default function Admin (props) {
     async function addVacancy(event) {
         event.preventDefault()
@@ -39,6 +41,7 @@ export default function Admin (props) {
             <br/>
             <input type="submit" value="Отправить"/>
         </form>
+        <Recomendations isAdmin={true}/>
         </>
     )
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
+
 import com.google.common.collect.Lists;
 
 @Service
@@ -33,6 +34,11 @@ public class RecommendationServiceImpl implements RecommendationService{
     @Override
     public void delete(Recommendation recommendation) {
         repository.delete(recommendation);
+    }
+
+    @Override
+    public Recommendation findById(int id) {
+        return repository.findById(Long.valueOf(id)).get();
     }
 
 }

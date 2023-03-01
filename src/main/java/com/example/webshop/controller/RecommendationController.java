@@ -63,10 +63,12 @@ public class RecommendationController {
 
 
     @DeleteMapping
-    public String delete(@PathVariable("recommendation") Recommendation recommendation) {
-        recommendationService.delete(recommendation);
+    @RequestMapping("/api/recommendations/{id}")
+    public String delete(@PathVariable("id") int recommendation) {
+        Recommendation recommendation1 = recommendationService.findById(recommendation);
+        recommendationService.delete(recommendation1);
 
-        return "redirect:/api/recommendations";
+        return "OK";
     }
 
 }

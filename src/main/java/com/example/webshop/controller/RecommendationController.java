@@ -62,8 +62,7 @@ public class RecommendationController {
     }
 
 
-    @DeleteMapping
-    @RequestMapping("/api/recommendations/{id}")
+    @DeleteMapping("/api/recommendations/{id}")
     public String delete(@PathVariable("id") int recommendation) {
         Recommendation recommendation1 = recommendationService.findById(recommendation);
         recommendationService.delete(recommendation1);

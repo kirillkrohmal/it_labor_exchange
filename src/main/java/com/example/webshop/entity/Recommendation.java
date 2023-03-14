@@ -2,7 +2,7 @@ package com.example.webshop.entity;
 
 import jakarta.persistence.*;
 
-@Table(name="recomendations")
+@Table(name="recommendations")
 @Entity
 public class Recommendation {
 

@@ -1,5 +1,5 @@
 export default function RecommendationAdmin(props) {
-  const { title, salary, description, id } = props;
+  const { title, salary, description, id, refetch } = props;
 
   function deleteRecommendation() {
     fetch("/api/recommendations/" + id, { method: "DELETE" })
@@ -7,7 +7,9 @@ export default function RecommendationAdmin(props) {
         if (!response.ok) throw "Не удалось удалить запись";
         return response.text();
       })
-      .then((text) => alert("Запись успешно удалена" + text))
+      .then((text) => {
+        refetch();
+      })
       .catch((error) => alert(error));
   }
 

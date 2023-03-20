@@ -19,14 +19,14 @@ export default function Recomendations(props) {
 
     return (
         <>
-        <div class="d-flex flex-wrap">
+        <div className="d-flex flex-wrap">
           {
             recomendations.map(el => <Recomendation title={el.title} salary={el.salary} description={el.description}/>)
           }
         </div>
-        <div class="d-flex mt-3">
-            <button class="btn btn-primary">Показать все</button> 
-            <button class="btn btn-primary ms-3">На карте</button> 
+        <div className="d-flex mt-3">
+            <button className="btn btn-primary">Показать все</button> 
+            <button className="btn btn-primary ms-3">На карте</button> 
 
         </div>
         </>

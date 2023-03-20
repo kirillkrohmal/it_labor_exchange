@@ -16,6 +16,10 @@ public class User {
     @Column(name = "isenabled")
     boolean isEnabled;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="resume_id")
+    Resume resume;
+
     public User() {
     }
 
@@ -47,5 +51,13 @@ public class User {
 
     public void setEnabled(boolean enabled) {
         isEnabled = enabled;
+    }
+
+    public Resume getResume() {
+        return resume;
+    }
+
+    public void setResume(Resume resume) {
+        this.resume = resume;
     }
 }

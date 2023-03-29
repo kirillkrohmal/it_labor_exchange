@@ -1,5 +1,5 @@
 import Recomendations from "../components/Recomendations";
-
+import Users from "../components/Users";
 export default function Admin (props) {
     
 
@@ -9,6 +9,7 @@ export default function Admin (props) {
         <h1>Admin</h1>
         
         <Recomendations isAdmin={true}/>
+        <Users />
         </>
     )
 }

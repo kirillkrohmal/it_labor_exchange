@@ -13,12 +13,8 @@ public class User {
     @Column(name = "username")
     String userName;
 
-    @Column(name = "isenabled")
+    @Column(name = "is_enabled")
     boolean isEnabled;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="resume_id")
-    Resume resume;
 
     public User() {
     }
@@ -53,11 +49,5 @@ public class User {
         isEnabled = enabled;
     }
 
-    public Resume getResume() {
-        return resume;
-    }
 
-    public void setResume(Resume resume) {
-        this.resume = resume;
-    }
 }

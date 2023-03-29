@@ -7,10 +7,13 @@ CREATE TABLE recommendations (
    description VARCHAR (255)
 );
 
-CREATE TABLE user (
-   id SERIAL PRIMARY KEY,
-   username VARCHAR (45),
-   isenabled boolean
+CREATE TABLE users
+(
+  id serial NOT NULL,
+  username character varying(45),
+  is_enabled boolean,
+  resume bytea,
+  CONSTRAINT users_pkey PRIMARY KEY (id)
 );
 
 

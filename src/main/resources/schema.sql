@@ -10,8 +10,9 @@ CREATE TABLE recommendations (
 CREATE TABLE users
 (
   id serial NOT NULL,
-  username character varying(45),
+  username character varying(45) unique NOT NULL,
   is_enabled boolean,
+  password character varying(255) NOT NULL,
   resume bytea,
   CONSTRAINT users_pkey PRIMARY KEY (id)
 );

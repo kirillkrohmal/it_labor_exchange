@@ -4,8 +4,6 @@ import com.example.webshop.entity.User;
 import com.example.webshop.repository.UserRepository;
 import com.example.webshop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,15 +13,17 @@ import java.util.List;
 public class UserController {
     @Autowired
     UserService userService;
+/*
     @Autowired
     BCryptPasswordEncoder bCryptPasswordEncoder;
+*/
 
     @GetMapping(value = "/api/users")
     public List<User> getUsers() {
         return userService.getUsers();
     }
 
-    @PostMapping(value = "/api/users")
+    /*@PostMapping(value = "/api/users")
     public int addUser(@RequestBody User user) {
         String password = bCryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(password);
@@ -31,7 +31,7 @@ public class UserController {
         user.setId(id);
         System.out.println(user);
         return id;
-    }
+    }*/
 
     /*@Transactional(rollbackFor = Exception.class)
     public String saveDto(UserDto userDto) {

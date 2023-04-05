@@ -11,6 +11,10 @@ export default function Recomendations(props) {
     fetch("/api/recommendations")
       .then((responce) => {
         console.log(responce);
+        if (responce.status === 401) {
+          window.location.pathname = "/login";
+          return;
+        }
         if (!responce.ok) {
           throw Error(responce);
         }

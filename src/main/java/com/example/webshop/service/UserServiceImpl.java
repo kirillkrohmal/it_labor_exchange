@@ -4,6 +4,8 @@ import com.example.webshop.entity.User;
 import com.example.webshop.repository.UserRepository;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,5 +26,10 @@ public class UserServiceImpl implements UserService {
         User saved = userRepository.save(user);
 
         return saved.getId();
+    }
+
+    @Override
+    public UserDetails findUserByName(String username) throws UsernameNotFoundException {
+        return null;
     }
 }
